@@ -1,0 +1,13 @@
+2020-12-20 22:45:54 ERROR UserController:127 - 1608479152491_"update"_{"status":false,"message":"Không xác định","timestamp":1608479152491}
+2020-12-20 22:46:19 ERROR UserController:127 - 1608479179419_"update"_{"status":false,"message":"Không xác định","timestamp":1608479179419}
+2020-12-20 22:48:55 ERROR UserController:127 - 1608479335371_"update"_{"status":false,"message":"Không xác định","timestamp":1608479335371}
+2020-12-20 22:56:46 ERROR UserController:127 - 1608479362544_"update"_{"status":false,"message":"Không xác định","timestamp":1608479362544}
+2020-12-20 22:56:59 ERROR UserController:127 - 1608479819160_"update"_{"status":false,"message":"Không xác định","timestamp":1608479819160}
+2020-12-20 22:57:19 INFO  UserController:119 - 1608479838287_"update"_{"status":true,"message":"Thành công","timestamp":1608479838287,"result":true}
+2020-12-20 22:58:32 INFO  UserController:119 - 1608479911824_"update"_{"status":true,"message":"Thành công","timestamp":1608479911824,"result":true}
+2020-12-20 23:02:38 INFO  UserController:119 - 1608479939595_"update"_{"status":true,"message":"Thành công","timestamp":1608479939595,"result":true}
+2020-12-20 23:05:30 ERROR UserController:127 - 1608480330019_"update"_{"status":false,"message":"Không xác định","timestamp":1608480330019}
+2020-12-20 23:10:31 ERROR UserController:127 - 1608480630148_"update"_{"status":false,"message":"Không xác định","timestamp":1608480630148}
+2020-12-20 23:14:13 ERROR UserController:127 - 1608480657165_"update"_{"status":false,"message":"Không xác định","timestamp":1608480657165}
+2020-12-20 23:14:27 INFO  UserController:119 - 1608480865601_"update"_{"status":true,"message":"Thành công","timestamp":1608480865601,"result":true}
+2020-12-20 23:18:18 INFO  UserController:119 - 1608481097947_"update"_{"status":true,"message":"Thành công","timestamp":1608481097947,"result":true}
