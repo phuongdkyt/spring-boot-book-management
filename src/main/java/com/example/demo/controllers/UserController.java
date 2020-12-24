@@ -3,7 +3,6 @@ package com.example.demo.controllers;
 import com.example.demo.entity.UserEntity;
 import com.example.demo.entity.bo.BaseMessage;
 import com.example.demo.entity.bo.ResponseEntityBO;
-import com.example.demo.repositories.UserRepository;
 import com.example.demo.services.impl.UserService;
 import com.example.demo.utils.Common;
 import com.example.demo.utils.Constants;
@@ -17,14 +16,14 @@ import java.util.Map;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/users")
 public class UserController {
     Logger logger = Logger.getLogger("UserController");
 
     @Autowired
     private UserService userService;
 
-    @GetMapping("/{id}")
+    @GetMapping("/as/{id}")
     public BaseMessage read(@PathVariable Long id) {
         BaseMessage response;
         long timeStamp = Common.getTimeStamp();
@@ -39,7 +38,28 @@ public class UserController {
             }
 
         } catch (Exception e) {
-            response = new BaseMessage(Constants.ERROR_RESPONSE, "Không xác định", timeStamp);
+            response = new BaseMessage(Constants.ERROR_RESPONSE, e.getMessage(), timeStamp);
+            logger.error(Common.createMessageLog(null, response, null, timeStamp, "read"));
+        }
+        return response;
+    }
+
+    @GetMapping
+    public BaseMessage read() {
+        BaseMessage response;
+        long timeStamp = Common.getTimeStamp();
+        try {
+            List<UserEntity> results = userService.findAll();
+            if (Common.isNullOrEmpty(results)) {
+                response = new ResponseEntityBO<>(Constants.ERROR_RESPONSE, "that bai!", timeStamp, results);
+                logger.error(Common.createMessageLog(null, response, null, timeStamp, "read"));
+            } else {
+                response = new ResponseEntityBO<>(Constants.SUCCESS_RESPONSE, "Thành công", timeStamp, results);
+                logger.info(Common.createMessageLog(null, response, null, timeStamp, "read"));
+            }
+
+        } catch (Exception e) {
+            response = new BaseMessage(Constants.ERROR_RESPONSE, e.getMessage(), timeStamp);
             logger.error(Common.createMessageLog(null, response, null, timeStamp, "read"));
         }
         return response;
@@ -81,7 +101,7 @@ public class UserController {
             }
 
         } catch (Exception e) {
-            response = new BaseMessage(Constants.ERROR_RESPONSE, "Không xác định", timeStamp);
+            response = new BaseMessage(Constants.ERROR_RESPONSE, e.getMessage(), timeStamp);
             logger.error(Common.createMessageLog(userEntity, response, null, timeStamp, "create"));
         }
         return response;
@@ -147,21 +167,30 @@ public class UserController {
             }
 
         } catch (Exception e) {
-            response = new BaseMessage(Constants.ERROR_RESPONSE, "Không xác định", timeStamp);
+            response = new BaseMessage(Constants.ERROR_RESPONSE, e.getMessage(), timeStamp);
             logger.error(Common.createMessageLog(null, response, null, timeStamp, "update"));
         }
         return response;
     }
 
+    @PostMapping("/book/{book_id}/user/{user_id}")
+    public BaseMessage update(@PathVariable Long user_id, @PathVariable Long book_id) {
+        BaseMessage response;
+        long timeStamp = Common.getTimeStamp();
+        try {
+            boolean results = userService.readBook(user_id, book_id);
+            if (results) {
+                response = new ResponseEntityBO<>(Constants.SUCCESS_RESPONSE, "Thành công", timeStamp, results);
+                logger.info(Common.createMessageLog(null, response, null, timeStamp, "update"));
+            } else {
+                response = new ResponseEntityBO<>(Constants.ERROR_RESPONSE, "khong tim thay nguoi dung nay!", timeStamp, results);
+                logger.error(Common.createMessageLog(null, response, null, timeStamp, "update"));
+            }
 
-//    @GetMapping("/all")
-//    List<UserBookResponse> findAllUserBook() {
-//        return userRepository.findAllUserBook();
-//    }
-
-    @GetMapping("/book/{book_id}/user/{user_id}")
-    boolean update(@PathVariable Long user_id, @PathVariable Long book_id) {
-        userService.readBook(user_id, book_id);
-        return true;
+        } catch (Exception e) {
+            response = new BaseMessage(Constants.ERROR_RESPONSE, e.getMessage(), timeStamp);
+            logger.error(Common.createMessageLog(null, response, null, timeStamp, "update"));
+        }
+        return response;
     }
 }

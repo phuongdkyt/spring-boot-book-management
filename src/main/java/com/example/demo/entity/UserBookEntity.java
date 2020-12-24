@@ -1,5 +1,6 @@
 package com.example.demo.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,21 +18,13 @@ public class UserBookEntity implements Serializable {
     Long id;
 
 
-//    @ManyToOne
-//    @JoinColumn(name = "user_id", insertable = false, updatable = false)
-//    private UserEntity user;
-//
-//
-//    @ManyToOne
-//    @JoinColumn(name = "book_id", insertable = false, updatable = false)
-//    private BookEntity book;
-
-    @ManyToOne
+    @JsonIgnore
+    @ManyToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(name = "user_id")
     private UserEntity user;
 
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(name = "book_id")
     private BookEntity book;
 

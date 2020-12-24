@@ -12,12 +12,11 @@ import java.util.Set;
 @Transactional
 public interface UserRepository extends JpaRepository<UserEntity,Long> {
      @Query(value = "select       \n" +
-             "\t\t\t u.id,\n" +
              "             u.user_name,\n" +
              "             b.book_name\n" +
              "              from users u\n" +
              "             inner join user_book ub on u.id=ub.user_id\n" +
              "             inner join books b on b.id=ub.book_id",nativeQuery = true)
      List<Map<String,Object>> findAllUserBook();
-     Optional<UserEntity> findById(Long id);
+
 }

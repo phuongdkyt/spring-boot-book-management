@@ -10,6 +10,7 @@ import java.util.Map;
 import java.util.Optional;
 
 public interface IUserService {
+    List<UserEntity> findAll();
     Optional<UserEntity> findById(Long id);
     boolean updateUser(UserEntity user);
     boolean addListUser(MultipartFile file);

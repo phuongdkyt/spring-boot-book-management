@@ -21,6 +21,7 @@ import javax.transaction.Transactional;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.file.Path;
 import java.util.*;
 
 @Service
@@ -31,6 +32,11 @@ public class UserService implements IUserService {
     private BookRepository bookRepository;
     @Autowired
     private UserBookRepository userBookRepository;
+
+    @Override
+    public List<UserEntity> findAll() {
+      return  userRepository.findAll();
+    }
 
     @Override
     public Optional<UserEntity> findById(Long id) {
@@ -83,35 +89,16 @@ public class UserService implements IUserService {
 
     @Override
     public boolean updateProfileImg(MultipartFile file, Long id) throws IOException {
-//        String fileName = StringUtils.cleanPath(file.getOriginalFilename());
-//
-//        try {
-//            // Kiểm tra xem tên của tệp có chứa các ký tự không hợp lệ không
-//            if (fileName.contains("..")) {
-//                throw new FileStorageException("Tên tệp chứa chuỗi đường dẫn không hợp lệ " + fileName);
-//            }
-//            Optional<UserEntity> userEntity = userRepository.findById(id);
-//            if (userEntity.isPresent()) {
-//                userEntity.get().setAvatar(file.getBytes());
-//                userEntity.get().setFileName(fileName);
-//
-//            } else {
-//                return false;
-//            }
-//            userRepository.save(userEntity.get());
-//            return true;
-//        } catch (IOException ex) {
-//            throw new FileStorageException("Could not store file " + fileName + ". Please try again!", ex);
-//        }
+
         File convertFile =
-                new File("src/main/resources/static/" + id + ".png");
+                new File("src/main/resources/static/avatars/" + id + ".png");
         convertFile.createNewFile();
         FileOutputStream fos = new FileOutputStream(convertFile,false);
 
         fos.write(file.getBytes());
         fos.close();
         Optional<UserEntity> userEntity=userRepository.findById(id);
-        userEntity.get().setAvatar("/" + id + ".png");
+        userEntity.get().setAvatar("/avatars/" + id + ".png");
         userRepository.save(userEntity.get());
         return true;
     }

@@ -7,7 +7,6 @@ import com.example.demo.entity.bo.ResponseEntityBO;
 import com.example.demo.services.IBookService;
 import com.example.demo.utils.Common;
 import com.example.demo.utils.Constants;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,15 +32,15 @@ public class BookController {
         try {
             List<BookEntity> results = bookService.findAllByBookName(name);
             if (Common.isNullOrEmpty(results)) {
-                response = new ResponseEntityBO<>(Constants.ERROR_RESPONSE, "that bai!", timeStamp, results);
+                response = new ResponseEntityBO<>(Constants.ERROR_RESPONSE, "Thất bại!!", timeStamp, results);
                 logger.error(Common.createMessageLog(name, response, null, timeStamp, "read"));
             } else {
-                response = new ResponseEntityBO<>(Constants.SUCCESS_RESPONSE, "Thành công", timeStamp, results);
+                response = new ResponseEntityBO<>(Constants.SUCCESS_RESPONSE, "Thành công!", timeStamp, results);
                 logger.info(Common.createMessageLog(name, response, null, timeStamp, "read"));
             }
 
         } catch (Exception e) {
-            response = new BaseMessage(Constants.ERROR_RESPONSE, "Không xác định", timeStamp);
+            response = new BaseMessage(Constants.ERROR_RESPONSE, e.getMessage(), timeStamp);
             logger.error(Common.createMessageLog(name, response, null, timeStamp, "read"));
         }
         return response;

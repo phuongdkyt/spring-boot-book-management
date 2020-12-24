@@ -21,12 +21,10 @@ public class UserEntity {
     private String user_name;
     private String address;
     private Integer age;
-//    @JsonIgnore
-//    private String fileName;
 
     private String avatar;
 
-
+    @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
     private Set<UserBookEntity> bookEntities;
 
