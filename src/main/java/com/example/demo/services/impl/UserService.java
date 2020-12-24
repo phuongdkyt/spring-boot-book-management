@@ -2,20 +2,26 @@ package com.example.demo.services.impl;
 
 
 import com.example.demo.entity.BookEntity;
+import com.example.demo.entity.UserBookEntity;
 import com.example.demo.entity.UserEntity;
 import com.example.demo.excel.ExcelConvert;
 import com.example.demo.exceptions.FileStorageException;
 import com.example.demo.repositories.BookRepository;
+import com.example.demo.repositories.UserBookRepository;
 import com.example.demo.repositories.UserRepository;
 import com.example.demo.services.IUserService;
+
+import com.example.demo.utils.Common;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.transaction.Transactional;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 public class UserService implements IUserService {
@@ -23,6 +29,8 @@ public class UserService implements IUserService {
     private UserRepository userRepository;
     @Autowired
     private BookRepository bookRepository;
+    @Autowired
+    private UserBookRepository userBookRepository;
 
     @Override
     public Optional<UserEntity> findById(Long id) {
@@ -74,35 +82,62 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public boolean updateProfileImg(MultipartFile file, Long id) {
-        String fileName = StringUtils.cleanPath(file.getOriginalFilename());
+    public boolean updateProfileImg(MultipartFile file, Long id) throws IOException {
+//        String fileName = StringUtils.cleanPath(file.getOriginalFilename());
+//
+//        try {
+//            // Kiểm tra xem tên của tệp có chứa các ký tự không hợp lệ không
+//            if (fileName.contains("..")) {
+//                throw new FileStorageException("Tên tệp chứa chuỗi đường dẫn không hợp lệ " + fileName);
+//            }
+//            Optional<UserEntity> userEntity = userRepository.findById(id);
+//            if (userEntity.isPresent()) {
+//                userEntity.get().setAvatar(file.getBytes());
+//                userEntity.get().setFileName(fileName);
+//
+//            } else {
+//                return false;
+//            }
+//            userRepository.save(userEntity.get());
+//            return true;
+//        } catch (IOException ex) {
+//            throw new FileStorageException("Could not store file " + fileName + ". Please try again!", ex);
+//        }
+        File convertFile =
+                new File("src/main/resources/static/" + id + ".png");
+        convertFile.createNewFile();
+        FileOutputStream fos = new FileOutputStream(convertFile,false);
 
-        try {
-            // Kiểm tra xem tên của tệp có chứa các ký tự không hợp lệ không
-            if (fileName.contains("..")) {
-                throw new FileStorageException("Tên tệp chứa chuỗi đường dẫn không hợp lệ " + fileName);
-            }
-            Optional<UserEntity> userEntity = userRepository.findById(id);
-            if (userEntity.isPresent()) {
-                userEntity.get().setAvatar(file.getBytes());
-                userEntity.get().setFileName(fileName);
-
-            } else {
-                return false;
-            }
-            userRepository.save(userEntity.get());
-            return true;
-        } catch (IOException ex) {
-            throw new FileStorageException("Could not store file " + fileName + ". Please try again!", ex);
-        }
+        fos.write(file.getBytes());
+        fos.close();
+        Optional<UserEntity> userEntity=userRepository.findById(id);
+        userEntity.get().setAvatar("/" + id + ".png");
+        userRepository.save(userEntity.get());
+        return true;
     }
 
     @Override
-    public boolean readBook(Long userId, Long bookId) {
-        Optional<UserEntity> userEntity = userRepository.findById(userId);
-        Optional<BookEntity> bookEntity = bookRepository.findById(bookId);
-//        userEntity.get().setBookEntitySet(Collections.singleton( bookEntity.get()));
-        userRepository.save(userEntity.get());
-        return true;
+    public boolean readBook(Long user_id, Long book_id) {
+        try {
+            UserBookEntity userBookEntity= userBookRepository.findByUserIdAndBookId(user_id,book_id);
+            if(Common.isNullOrEmpty(userBookEntity)) {
+                Optional<UserEntity> userEntity= userRepository.findById(user_id);
+                Optional<BookEntity> bookEntity=bookRepository.findById(book_id);
+                UserBookEntity newUserBook= new UserBookEntity();
+                newUserBook.setBook(bookEntity.get());
+                newUserBook.setUser(userEntity.get());
+                userBookRepository.save(newUserBook);
+
+            }
+            return true;
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    @Override
+    public List<Map<String, Object>> getListUserAreReading() {
+        return userRepository.findAllUserBook();
     }
 }

@@ -5,7 +5,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -19,12 +21,13 @@ public class UserEntity {
     private String user_name;
     private String address;
     private Integer age;
-    @JsonIgnore
-    private String fileName;
-    @Lob
-    private byte[] avatar;
+//    @JsonIgnore
+//    private String fileName;
+
+    private String avatar;
 
 
-    @OneToMany(mappedBy = "user")
-    Set<UserBookEntity> userBookEntities=new HashSet<>();
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+    private Set<UserBookEntity> bookEntities;
+
 }

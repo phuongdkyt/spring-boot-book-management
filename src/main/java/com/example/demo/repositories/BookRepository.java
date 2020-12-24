@@ -7,6 +7,6 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface BookRepository extends JpaRepository<BookEntity,Long> {
-    @Query(value = "select * from books where name like '%truyện%'",nativeQuery = true)
+    @Query(value = "select * from books where book_name like \"%\" :name  \"%\"    ",nativeQuery = true)
     List<BookEntity> findAllByName(String name);
 }

@@ -27,7 +27,7 @@ public class BookController {
 
     //http://localhost:8082/book/search?name=xxx
     @GetMapping("/search")
-    public Object read(@RequestParam String name) throws JsonProcessingException {
+    public Object read(@RequestParam String name) {
         BaseMessage response;
         long timeStamp = Common.getTimeStamp();
         try {

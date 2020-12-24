@@ -11,3 +11,62 @@
 2020-12-20 23:14:13 ERROR UserController:127 - 1608480657165_"update"_{"status":false,"message":"Không xác định","timestamp":1608480657165}
 2020-12-20 23:14:27 INFO  UserController:119 - 1608480865601_"update"_{"status":true,"message":"Thành công","timestamp":1608480865601,"result":true}
 2020-12-20 23:18:18 INFO  UserController:119 - 1608481097947_"update"_{"status":true,"message":"Thành công","timestamp":1608481097947,"result":true}
+2020-12-21 21:53:57 ERROR BookController:45 - 1608562436805_"truyện"_"read"_{"status":false,"message":"Không xác định","timestamp":1608562436805}
+2020-12-21 21:56:29 ERROR BookController:45 - 1608562562096_"truyện"_"read"_{"status":false,"message":"Không xác định","timestamp":1608562562096}
+2020-12-21 22:04:17 ERROR BookController:45 - 1608563056300_"truyện"_"read"_{"status":false,"message":"Không xác định","timestamp":1608563056300}
+2020-12-21 22:06:25 ERROR BookController:45 - 1608563162636_"truyện"_"read"_{"status":false,"message":"Không xác định","timestamp":1608563162636}
+2020-12-21 22:11:02 ERROR BookController:45 - 1608563462132_"truyện"_"read"_{"status":false,"message":"Không xác định","timestamp":1608563462132}
+2020-12-21 22:11:03 ERROR BookController:45 - 1608563463392_"truyện"_"read"_{"status":false,"message":"Không xác định","timestamp":1608563463392}
+2020-12-21 22:11:34 ERROR BookController:45 - 1608563493932_"truyện"_"read"_{"status":false,"message":"Không xác định","timestamp":1608563493932}
+2020-12-21 22:11:35 ERROR BookController:45 - 1608563495388_"truyện"_"read"_{"status":false,"message":"Không xác định","timestamp":1608563495388}
+2020-12-21 22:11:36 ERROR BookController:45 - 1608563496225_"truyện"_"read"_{"status":false,"message":"Không xác định","timestamp":1608563496225}
+2020-12-21 22:12:57 ERROR BookController:45 - 1608563577843_"truyện"_"read"_{"status":false,"message":"Không xác định","timestamp":1608563577843}
+2020-12-21 22:14:34 INFO  BookController:40 - 1608563674297_"truyện"_"read"_{"status":true,"message":"Thành công","timestamp":1608563674297,"result":[{"userBookEntities":[],"id":1,"book_name":"Truyện Kiều","author":"Nguyễn Du","price":100.0},{"userBookEntities":[],"id":3,"book_name":"Kiều Truyện","author":"Nguyễn Nam","price":300.0},{"userBookEntities":[],"id":4,"book_name":"Truyện Yêu","author":"Nguyễn Phương","price":400.0}]}
+2020-12-21 22:16:15 ERROR BookController:37 - 1608563775425_"truyện"_"read"_{"status":false,"message":"that bai!","timestamp":1608563775425,"result":[]}
+2020-12-21 22:16:24 ERROR BookController:37 - 1608563784244_"truyện"_"read"_{"status":false,"message":"that bai!","timestamp":1608563784244,"result":[]}
+2020-12-21 22:21:00 ERROR BookController:37 - 1608564060607_"truyện"_"read"_{"status":false,"message":"that bai!","timestamp":1608564060607,"result":[]}
+2020-12-21 22:25:08 ERROR BookController:37 - 1608564308870_"truyện"_"read"_{"status":false,"message":"that bai!","timestamp":1608564308870,"result":[]}
+2020-12-21 22:34:46 ERROR BookController:37 - 1608564886472_"truyện"_"read"_{"status":false,"message":"that bai!","timestamp":1608564886472,"result":[]}
+2020-12-21 22:34:48 ERROR BookController:37 - 1608564888918_"truyện"_"read"_{"status":false,"message":"that bai!","timestamp":1608564888918,"result":[]}
+2020-12-21 22:36:39 ERROR BookController:37 - 1608564999709_"truyện"_"read"_{"status":false,"message":"that bai!","timestamp":1608564999709,"result":[]}
+2020-12-21 22:36:41 ERROR BookController:37 - 1608565001690_"truyện"_"read"_{"status":false,"message":"that bai!","timestamp":1608565001690,"result":[]}
+2020-12-21 22:36:43 ERROR BookController:37 - 1608565003410_"truyện"_"read"_{"status":false,"message":"that bai!","timestamp":1608565003410,"result":[]}
+2020-12-21 22:37:31 INFO  BookController:40 - 1608565051284_"truyện"_"read"_{"status":true,"message":"Thành công","timestamp":1608565051284,"result":[{"id":1,"book_name":"Truyện Kiều","author":"Nguyễn Du","price":100.0},{"id":3,"book_name":"Kiều Truyện","author":"Nguyễn Nam","price":300.0},{"id":4,"book_name":"Truyện Yêu","author":"Nguyễn Phương","price":400.0}]}
+2020-12-21 22:46:21 ERROR BookController:37 - 1608565580837_"truyện"_"read"_{"status":false,"message":"that bai!","timestamp":1608565580837,"result":[]}
+2020-12-21 22:46:24 ERROR BookController:37 - 1608565584665_"truyện"_"read"_{"status":false,"message":"that bai!","timestamp":1608565584665,"result":[]}
+2020-12-21 22:47:02 ERROR BookController:37 - 1608565622475_"truyện"_"read"_{"status":false,"message":"that bai!","timestamp":1608565622475,"result":[]}
+2020-12-21 22:52:14 ERROR BookController:37 - 1608565934228_"truyện"_"read"_{"status":false,"message":"that bai!","timestamp":1608565934228,"result":[]}
+2020-12-21 22:52:17 ERROR BookController:37 - 1608565937439_"truyện"_"read"_{"status":false,"message":"that bai!","timestamp":1608565937439,"result":[]}
+2020-12-21 22:52:20 ERROR BookController:37 - 1608565940637_"truyện"_"read"_{"status":false,"message":"that bai!","timestamp":1608565940637,"result":[]}
+2020-12-21 22:52:48 ERROR BookController:37 - 1608565968748_"truyện"_"read"_{"status":false,"message":"that bai!","timestamp":1608565968748,"result":[]}
+2020-12-21 22:52:49 ERROR BookController:37 - 1608565969782_"truyện"_"read"_{"status":false,"message":"that bai!","timestamp":1608565969782,"result":[]}
+2020-12-21 22:53:23 INFO  BookController:40 - 1608566002190_"truyện"_"read"_{"status":true,"message":"Thành công","timestamp":1608566002190,"result":[{"id":1,"book_name":"Truyện Kiều","author":"Nguyễn Du","price":100.0},{"id":3,"book_name":"Kiều Truyện","author":"Nguyễn Nam","price":300.0},{"id":4,"book_name":"Truyện Yêu","author":"Nguyễn Phương","price":400.0}]}
+2020-12-21 22:54:02 ERROR BookController:37 - 1608566042678_"truyện"_"read"_{"status":false,"message":"that bai!","timestamp":1608566042678,"result":[]}
+2020-12-21 22:54:03 ERROR BookController:37 - 1608566043994_"truyện"_"read"_{"status":false,"message":"that bai!","timestamp":1608566043994,"result":[]}
+2020-12-21 22:56:31 INFO  BookController:40 - 1608566191314_"truyện kiều"_"read"_{"status":true,"message":"Thành công","timestamp":1608566191314,"result":[{"id":1,"book_name":"Truyện Kiều","author":"Nguyễn Du","price":100.0}]}
+2020-12-21 22:57:37 ERROR BookController:37 - 1608566257612_"truyện kiều"_"read"_{"status":false,"message":"that bai!","timestamp":1608566257612,"result":[]}
+2020-12-21 22:57:41 ERROR BookController:37 - 1608566261548_"truyện"_"read"_{"status":false,"message":"that bai!","timestamp":1608566261548,"result":[]}
+2020-12-21 22:57:42 ERROR BookController:37 - 1608566262360_"truyện"_"read"_{"status":false,"message":"that bai!","timestamp":1608566262360,"result":[]}
+2020-12-21 22:59:06 INFO  BookController:40 - 1608566346524_"truyện"_"read"_{"status":true,"message":"Thành công","timestamp":1608566346524,"result":[{"id":1,"book_name":"Truyện Kiều","author":"Nguyễn Du","price":100.0},{"id":3,"book_name":"Kiều Truyện","author":"Nguyễn Nam","price":300.0},{"id":4,"book_name":"Truyện Yêu","author":"Nguyễn Phương","price":400.0}]}
+2020-12-21 22:59:14 INFO  BookController:40 - 1608566354744_"truyện"_"read"_{"status":true,"message":"Thành công","timestamp":1608566354744,"result":[{"id":1,"book_name":"Truyện Kiều","author":"Nguyễn Du","price":100.0},{"id":3,"book_name":"Kiều Truyện","author":"Nguyễn Nam","price":300.0},{"id":4,"book_name":"Truyện Yêu","author":"Nguyễn Phương","price":400.0}]}
+2020-12-23 00:20:52 INFO  BookController:40 - 1608657651720_"truyện"_"read"_{"status":true,"message":"Thành công","timestamp":1608657651720,"result":[{"id":1,"book_name":"Truyện Kiều","author":"Nguyễn Du","price":100.0},{"id":3,"book_name":"Kiều Truyện","author":"Nguyễn Nam","price":300.0},{"id":4,"book_name":"Truyện Yêu","author":"Nguyễn Phương","price":400.0}]}
+2020-12-23 10:41:31 ERROR UserController:65 - 1608694891264_"read"_{"status":false,"message":"Không xác định","timestamp":1608694891264}
+2020-12-23 10:41:42 ERROR UserController:65 - 1608694902781_"read"_{"status":false,"message":"Không xác định","timestamp":1608694902781}
+2020-12-23 10:42:06 ERROR UserController:65 - 1608694926446_"read"_{"status":false,"message":"could not extract ResultSet; SQL [n/a]; nested exception is org.hibernate.exception.SQLGrammarException: could not extract ResultSet","timestamp":1608694926446}
+2020-12-23 10:43:09 ERROR UserController:60 - 1608694988917_"read"_{"status":false,"message":"that bai!","timestamp":1608694988917,"result":[{"book_name":"Truyện Kiều","id":1,"user_name":"phuong99"},{"user_name":"phuong1","book_name":"Truyện Kiều","id":2},{"id":1,"book_name":"Lão Hạc","user_name":"phuong99"},{"user_name":"phuong1","id":2,"book_name":"Lão Hạc"},{"book_name":"Kiều Truyện","id":1,"user_name":"phuong99"}]}
+2020-12-23 11:14:40 INFO  UserController:122 - 1608696879292_"update"_{"status":true,"message":"Thành công","timestamp":1608696879292,"result":true}
+2020-12-23 13:35:04 INFO  UserController:59 - 1608705303970_"readBookReading"_{"status":true,"message":"Thành công","timestamp":1608705303970,"result":[{"book_name":"Truyện Kiều","id":1,"user_name":"phuong99"}]}
+2020-12-23 13:35:21 INFO  UserController:59 - 1608705321383_"readBookReading"_{"status":true,"message":"Thành công","timestamp":1608705321383,"result":[{"book_name":"Truyện Kiều","id":1,"user_name":"phuong99"},{"book_name":"Kiều Truyện","id":1,"user_name":"phuong99"}]}
+2020-12-24 11:51:44 ERROR UserController:129 - 1608785504237_"update"_{"status":false,"message":"The system cannot find the path specified","timestamp":1608785504237}
+2020-12-24 11:53:10 ERROR UserController:129 - 1608785584070_"update"_{"status":false,"message":"The system cannot find the path specified","timestamp":1608785584070}
+2020-12-24 11:55:35 ERROR UserController:129 - 1608785673239_"update"_{"status":false,"message":"The system cannot find the path specified","timestamp":1608785673239}
+2020-12-24 11:58:37 ERROR UserController:129 - 1608785814778_"update"_{"status":false,"message":"No value present","timestamp":1608785814778}
+2020-12-24 12:01:44 INFO  UserController:121 - 1608786071617_"update"_{"status":true,"message":"Thành công","timestamp":1608786071617,"result":true}
+2020-12-24 12:03:41 INFO  UserController:121 - 1608786221324_"update"_{"status":true,"message":"Thành công","timestamp":1608786221324,"result":true}
+2020-12-24 12:04:15 INFO  UserController:121 - 1608786255007_"update"_{"status":true,"message":"Thành công","timestamp":1608786255007,"result":true}
+2020-12-24 12:05:44 INFO  UserController:121 - 1608786343987_"update"_{"status":true,"message":"Thành công","timestamp":1608786343987,"result":true}
+2020-12-24 12:05:57 INFO  UserController:121 - 1608786357660_"update"_{"status":true,"message":"Thành công","timestamp":1608786357660,"result":true}
+2020-12-24 12:10:45 INFO  UserController:38 - 1608786645294_"read"_{"status":true,"message":"Thành công","timestamp":1608786645294,"result":{"id":1,"user_name":"fdsfsdf","address":"dsfsdf","age":33,"avatar":"/1.png","bookEntities":[]}}
+2020-12-24 12:11:04 INFO  UserController:38 - 1608786664934_"read"_{"status":true,"message":"Thành công","timestamp":1608786664934,"result":{"id":1,"user_name":"fdsfsdf","address":"dsfsdf","age":33,"avatar":"/1.png","bookEntities":[]}}
+2020-12-24 12:11:06 INFO  UserController:38 - 1608786666151_"read"_{"status":true,"message":"Thành công","timestamp":1608786666151,"result":{"id":1,"user_name":"fdsfsdf","address":"dsfsdf","age":33,"avatar":"/1.png","bookEntities":[]}}
+2020-12-24 12:13:44 INFO  UserController:38 - 1608786824587_"read"_{"status":true,"message":"Thành công","timestamp":1608786824587,"result":{"id":1,"user_name":"fdsfsdf","address":"dsfsdf","age":33,"avatar":"/1.png","bookEntities":[]}}
